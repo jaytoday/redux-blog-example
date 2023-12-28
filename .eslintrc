@@ -1,7 +1,15 @@
-root: true
-extends: 'eslint:recommended'
+"extends":
+  - "eslint:recommended"
+  - "defaults"
 
 parser: babel-eslint
+
+ecmaVersion: 8
+
+env:
+  node: true
+  es6: true
+  browser: true
 
 plugins:
   - react
@@ -11,11 +19,6 @@ rules:
     - 2
     - 1tbs
     - allowSingleLine: true
-
-  comma-style: 2
-  # complexity:
-  #   - 2
-  #   - 5
 
   consistent-this:
     - 2
@@ -69,11 +72,6 @@ rules:
     - 15
 
   no-lonely-if: 2
-
-  no-multiple-empty-lines:
-    - 2
-    - max: 1
-
   no-nested-ternary: 2
   no-self-compare: 2
   no-unneeded-ternary: 2
@@ -108,7 +106,6 @@ rules:
 
   semi: 2
 
-  space-after-keywords: 2
   space-before-blocks: 2
   space-before-function-paren:
     - 2
@@ -122,9 +119,9 @@ rules:
 
   wrap-regex: 2
 
-  react/display-name:
+  jsx-quotes:
     - 2
-    - acceptTranspilerName: true
+    - prefer-double
 
   react/jsx-boolean-value: 2
   react/jsx-curly-spacing: 2
@@ -135,16 +132,8 @@ rules:
 
   react/jsx-no-undef: 2
 
-  react/jsx-quotes:
-    - 2
-    - double
-    - avoid-escape
-
-  react/jsx-sort-prop-types: 2
-  react/jsx-uses-react:
-    - 2
-    - ignoreCase: true
-
+  react/jsx-sort-props: 0
+  react/jsx-sort-prop-types: 0
   react/jsx-uses-vars: 2
 
   react/no-did-mount-set-state:
@@ -152,9 +141,12 @@ rules:
     - allow-in-func
 
   react/no-did-update-set-state: 2
-  react/no-multi-comp: 2
   react/no-unknown-property: 2
-  react/prop-types: 2
+  # react/prop-types: 2
   react/self-closing-comp: 2
   react/sort-comp: 2
   react/wrap-multilines: 2
+  react/jsx-uses-react: 2
+  react/display-name:
+    - 0
+    - ignoreTranspilerName: false
